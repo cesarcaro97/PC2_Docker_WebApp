@@ -14,11 +14,12 @@ services:
     environment:
       <<: *common-variables
     command: --default-authentication-plugin=mysql_native_password
-    restart: unless-stopped
+    restart: always
     expose:
       - "3306"
     ports:
       - 3306:3306
+    hostname: mysql-db
     volumes:
       - ./PC2_db/init.sql:/docker-entrypoint-initdb.d/init.sql
   phpmyadmin:
