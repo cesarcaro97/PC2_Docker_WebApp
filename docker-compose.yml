@@ -51,22 +51,22 @@ services:
     links:
       - mysql-db
     command: ["wait-for-it", "mysql-db:3306", "--", "node",  "index.js"]
-  client:
-    build: ./PC2_frontend/PC2_front
-    container_name: client_container
-    depends_on:
-      - mysql-db
-      - server
-    environment:
-      <<: *common-variables
-      NODE_PATH: src
-      REACT_APP_SERVER_IP: node_server_container
-    ports:
-      - 3000:3000
-    volumes:
-      - ./PC2_frontend/PC2_front/src:/app/src
-      - ./PC2_frontend/PC2_front/node_modules:/app/node_modules
-    links:
-      - server
-      - mysql-db
-    command: ["wait-for-it", "mysql-db:3306", "--", "npm",  "start"]
+  # client:
+  #   build: ./PC2_frontend/PC2_front
+  #   container_name: client_container
+  #   depends_on:
+  #     - mysql-db
+  #     - server
+  #   environment:
+  #     <<: *common-variables
+  #     NODE_PATH: src
+  #     REACT_APP_SERVER_IP: node_server_container
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - ./PC2_frontend/PC2_front/src:/app/src
+  #     - ./PC2_frontend/PC2_front/node_modules:/app/node_modules
+  #   links:
+  #     - server
+  #     - mysql-db
+  #   command: ["wait-for-it", "mysql-db:3306", "--", "npm",  "start"]
