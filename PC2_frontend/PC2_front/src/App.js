@@ -23,10 +23,10 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const s = await fetch(
-        `http://localhost:${process.env.REACT_APP_SERVER_PORT}/s`
+        `${process.env.REACT_APP_SERVER_IP}:${process.env.REACT_APP_SERVER_PORT}/s`
       ).then(response => response.json());
       const a = await fetch(
-        `http://localhost:${process.env.REACT_APP_SERVER_PORT}/a`
+        `${process.env.REACT_APP_SERVER_IP}:${process.env.REACT_APP_SERVER_PORT}/a`
       ).then(response => response.json());
 
       setListData({ s, a });
@@ -108,7 +108,7 @@ function App() {
     if(type === 's') {
 
       let response;
-      response = await fetch(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/s`,requestOptions).then(response => response.json());  
+      response = await fetch(`${process.env.REACT_APP_SERVER_IP}:${process.env.REACT_APP_SERVER_PORT}/s`,requestOptions).then(response => response.json());  
       
       if (response.response) {
         toast.success('deleted!');
@@ -124,7 +124,7 @@ function App() {
     }
     else {
       let response;
-      response = await fetch(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/a`,requestOptions).then(response => response.json());  
+      response = await fetch(`${process.env.REACT_APP_SERVER_IP}:${process.env.REACT_APP_SERVER_PORT}/a`,requestOptions).then(response => response.json());  
       
       if (response.response) {
         toast.success('deleted!');
@@ -144,13 +144,13 @@ function App() {
 
     if(listA) {
       const a = await fetch(
-        `http://localhost:${process.env.REACT_APP_SERVER_PORT}/a`
+        `${process.env.REACT_APP_SERVER_IP}:${process.env.REACT_APP_SERVER_PORT}/a`
       ).then(response => response.json());
       setListData({ ...listData, a });
     }
     else {
       const s = await fetch(
-        `http://localhost:${process.env.REACT_APP_SERVER_PORT}/s`
+        `${process.env.REACT_APP_SERVER_IP}:${process.env.REACT_APP_SERVER_PORT}/s`
       ).then(response => response.json());
       setListData({ ...listData, s });
     }
@@ -160,8 +160,8 @@ function App() {
   const get = async () => {
 
     let response, result;
-    response = userId && !hash ? await fetch(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/user/${userId}`).then(response => response.json()) :
-    await fetch(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/user/${userId}/${hash}`).then(response => response.json());
+    response = userId && !hash ? await fetch(`${process.env.REACT_APP_SERVER_IP}:${process.env.REACT_APP_SERVER_PORT}/user/${userId}`).then(response => response.json()) :
+    await fetch(`${process.env.REACT_APP_SERVER_IP}:${process.env.REACT_APP_SERVER_PORT}/user/${userId}/${hash}`).then(response => response.json());
 
     console.log(response);
 
