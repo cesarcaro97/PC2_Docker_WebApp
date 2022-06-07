@@ -39,9 +39,10 @@ services:
     container_name: node_server_container
     depends_on:
       - mysql-db
+      - phpmyadmin
     environment:
       <<: *common-variables
-      MYSQL_HOST_IP: mysql-db
+      MYSQL_HOST_IP: mysql_container
     ports:
       - 8000:8000
     volumes:
@@ -53,6 +54,8 @@ services:
   client:
     build: ./PC2_frontend/PC2_front
     container_name: client_container
+    depends_on:
+      - mysql-db
     environment:
       <<: *common-variables
       NODE_PATH: src
@@ -62,4 +65,5 @@ services:
       - ./PC2_frontend/PC2_front/src:/app/src
     links:
       - server
-    command: npm start
+      - mysql-db
+    command: ["wait-for-it", "mysql-db:3306", "--", "npm",  "start"]
