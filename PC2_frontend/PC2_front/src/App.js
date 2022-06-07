@@ -23,10 +23,10 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const s = await fetch(
-        `${process.env.REACT_APP_SERVER_IP}:${process.env.REACT_APP_SERVER_PORT}/s`
+        `${process.env.REACT_APP_SERVER_IP}/s`
       ).then(response => response.json());
       const a = await fetch(
-        `${process.env.REACT_APP_SERVER_IP}:${process.env.REACT_APP_SERVER_PORT}/a`
+        `${process.env.REACT_APP_SERVER_IP}/a`
       ).then(response => response.json());
 
       setListData({ s, a });

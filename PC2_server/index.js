@@ -34,6 +34,7 @@ app.use(cors());
 app.use(bodyParser.json({limit:'20mb'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.disable('etag');
 
 app.listen(process.env.REACT_APP_SERVER_PORT,()=>{
     console.log(`App server now running and listening on port ${process.env.REACT_APP_SERVER_PORT}`);
