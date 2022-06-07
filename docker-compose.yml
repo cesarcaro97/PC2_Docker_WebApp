@@ -65,6 +65,7 @@ services:
       - 3000:3000
     volumes:
       - ./PC2_frontend/PC2_front/src:/app/src
+      - ./PC2_frontend/PC2_front/node_modules:/app/node_modules
     links:
       - server
       - mysql-db
