@@ -45,6 +45,7 @@ services:
       - 8000:8000
     volumes:
       - ./PC2_server:/app
+      - ./PC2_server/node_modules:/app/node_modules
     links:
       - mysql-db
     command: ["wait-for-it", "mysql-db:3306", "--", "node",  "index.js"]
