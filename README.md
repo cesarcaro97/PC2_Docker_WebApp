@@ -1,11 +1,5 @@
 # PC2_Docker_WebApp
 
-# link Docker Hub
-
-```
-https://hub.docker.com/repository/docker/cesarcaro97/pc2_docker_webapp_2022
-```
-
 ## Lo puede correr de dos formas:
 
 # 1) Run Local
