@@ -59,9 +59,8 @@ Para el método de delete, usar curl -X "DELETE".
 ```
 
 ## Link Video DEMO
-```
 https://youtu.be/gAN9ohzlNVc
-```
+
 
 
 
