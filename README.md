@@ -51,6 +51,8 @@ docker-compose up -d (puede generar errores el puerto 8000 por motivos de timeou
 ## Phpmyadmin
 ```
 localhost:8080
+Username: root
+Password: root
 ```
 ## Server
 ```
