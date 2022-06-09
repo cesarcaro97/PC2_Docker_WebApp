@@ -19,7 +19,7 @@ node index.js
 
 # 2) Run Docker
 
-Primero clona este repositorio 
+Primer paso, clonar el repositorio:
 
 ```
 git clone https://github.com/cesarcaro97/PC2_Docker_WebApp
@@ -39,7 +39,7 @@ docker-compose build
 Luego,
 
 ```
-docker-compose up -d
+docker-compose up -d (puede generar errores el puerto 8000 por motivos de timeout de la herramienta, en ese caso usar el siguiente comando: docker-compose up -d server)
 ```
 
 # Puertos
@@ -48,13 +48,19 @@ docker-compose up -d
 ```
 localhost:8080
 ```
-## Front
-```
-localhost:3000
-```
 ## Server
 ```
 localhost:8000
+```
+```
+En el puerto 8000 que se activa en el play with docker, se genera una URL como esta: http://ip172-18-0-54-cagmk5o9jotg00b47pm0-8000.direct.labs.play-with-docker.com/
+Para probar, usar el siguiente comando de ejemplo: curl http://ip172-18-0-54-cagmk5o9jotg00b47pm0-8000.direct.labs.play-with-docker.com/user/1001
+Para el método de delete, usar curl -X "DELETE".
+```
+
+## Link Video DEMO
+```
+https://youtu.be/gAN9ohzlNVc
 ```
 
 
