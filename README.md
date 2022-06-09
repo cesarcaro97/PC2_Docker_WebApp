@@ -1,4 +1,8 @@
 # PC2_Docker_WebApp
+Grupo:
+Cesar Caro
+Enrique Cabarcas
+Danilo Jimenez
 
 ## Lo puede correr de dos formas:
 
